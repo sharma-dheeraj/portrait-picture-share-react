@@ -14,7 +14,7 @@ function App() {
       username: "abcd",
       caption: " xdgfchgvjhbk dgfchgvjhb dgfchgvjhb fdxgfc",
       imageURL:
-        "https://i.pinimg.com/originals/eb/07/8f/eb078f2cdeedb55a999c8841cee215d4.jpg",
+        "https://cdn.pixabay.com/photo/2021/06/29/18/55/mountain-slope-6374980_960_720.jpg",
     },
   ]);
   return (
