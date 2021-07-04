@@ -11,7 +11,7 @@ function App() {
           alt=""
         />
       </div>
-      <h1>react-instagram-clone</h1>
+
       <Post />
     </div>
   );

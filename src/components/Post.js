@@ -17,6 +17,7 @@ function Post() {
       <img
         className="post__image"
         src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+        alt="image"
       />
       <p className="post__text">
         <strong>Username </strong> caption for the post

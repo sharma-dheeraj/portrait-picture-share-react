@@ -3,7 +3,6 @@
 }
 .App {
   background-color: #fafafa;
-  height: 100vh;
 }
 .App__header {
   object-fit: contain;
