@@ -1,4 +1,5 @@
 import "./App.css";
+import Post from "./components/Post";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         />
       </div>
       <h1>react-instagram-clone</h1>
+      <Post />
     </div>
   );
 }
