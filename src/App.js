@@ -4,7 +4,7 @@ import Post from "./components/Post";
 import { db } from "./firebase";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import { Button } from "@material-ui/core";
+import { Button, Input } from "@material-ui/core";
 
 function getModalStyle() {
   const top = 50;
@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+
   const [posts, setPosts] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -40,11 +45,40 @@ function App() {
     });
   }, []);
 
+  const signUp = (e) => {};
+
   return (
     <div className="App">
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
-          <h2>Signup sign modal</h2>
+          <form className="App__signup">
+            <center>
+              <img
+                className="App__headerImage"
+                src="https://instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+                alt=""
+              />
+            </center>
+            <Input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></Input>
+            <Input
+              type="text"
+              placeholder="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></Input>
+            <Input
+              type="text"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></Input>
+            <Button onClick={signUp}>SignUp</Button>
+          </form>
         </div>
       </Modal>
       <div className="App__header">
