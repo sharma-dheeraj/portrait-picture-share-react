@@ -6,6 +6,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { Button, Input } from "@material-ui/core";
 import ImageUpload from "./components/ImageUpload";
+import logo from "./images/portrait_logo.png";
+import AboutMe from "./components/AboutMe";
 
 function getModalStyle() {
   const top = 50;
@@ -97,11 +99,7 @@ function App() {
         <div style={modalStyle} className={classes.paper}>
           <form className="App__signup">
             <center>
-              <img
-                className="App__headerImage"
-                src="https://instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-                alt=""
-              />
+              <img className="App__headerImage" src={logo} alt="" />
             </center>
             <Input
               type="text"
@@ -131,11 +129,7 @@ function App() {
         <div style={modalStyle} className={classes.paper}>
           <form className="App__signup">
             <center>
-              <img
-                className="App__headerImage"
-                src="https://instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-                alt=""
-              />
+              <img className="App__headerImage" src={logo} alt="" />
             </center>
             <Input
               type="text"
@@ -156,11 +150,7 @@ function App() {
         </div>
       </Modal>
       <div className="App__header">
-        <img
-          className="App__headerImage"
-          src="https://instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-          alt=""
-        />
+        <img className="App__headerImage" src={logo} alt="" />
         {user ? (
           <Button
             onClick={() => {
@@ -171,20 +161,32 @@ function App() {
           </Button>
         ) : (
           <div className="App__loginContainer">
-            <Button onClick={() => setOpenSignin(true)}> Sign In</Button>
-            <Button onClick={() => setOpen(true)}> Sign Up</Button>
+            <Button onClick={() => setOpenSignin(true)}>
+              {" "}
+              <strong>Sign In</strong>
+            </Button>
+            <Button onClick={() => setOpen(true)}>
+              <strong>Sign Up</strong>{" "}
+            </Button>
           </div>
         )}
       </div>
+      <div className="App__posts">
+        <div className="App__postsLeft">
+          {posts.map(({ id, post }) => (
+            <Post
+              key={id}
+              username={post.username}
+              imageURL={post.imageURL}
+              caption={post.caption}
+            />
+          ))}
+        </div>
+        <div className="App__postsRight">
+          <AboutMe />
+        </div>
+      </div>
 
-      {posts.map(({ id, post }) => (
-        <Post
-          key={id}
-          username={post.username}
-          imageURL={post.imageURL}
-          caption={post.caption}
-        />
-      ))}
       {user?.displayName ? (
         <ImageUpload username={user.displayName} />
       ) : (
