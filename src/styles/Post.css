@@ -20,13 +20,29 @@ a {
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   width: 100%;
-  max-height: 500px;
+  max-height: 400px;
   object-fit: contain;
 }
 .post__text {
-  padding: 10px;
+  padding: 20px;
   color: black;
 }
 span {
   font-weight: bolder;
+}
+.post__commentBox {
+  display: flex;
+}
+.post__comment {
+  flex: 1;
+  border: none;
+  border-top: 1px solid lightgrey;
+  padding: 20px;
+}
+.post__button {
+  border: none;
+  border-top: 1px solid lightgrey;
+  padding: 10px;
+  flex: 0;
+  color: lightseagreen;
 }
