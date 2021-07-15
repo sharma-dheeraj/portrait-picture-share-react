@@ -9,6 +9,11 @@
   background-color: white;
   padding: 20px;
   border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+}
+.App__headerImage {
+  object-fit: contain;
 }
 .App__signup {
   display: flex;
