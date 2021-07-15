@@ -5,7 +5,6 @@
   background-color: #fafafa;
 }
 .App__header {
-  object-fit: contain;
   background-color: white;
   padding: 20px;
   border-bottom: 1px solid lightgray;
@@ -18,4 +17,12 @@
 .App__signup {
   display: flex;
   flex-direction: column;
+}
+.App__posts {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.App__postsRight {
+  margin-left: 40px;
 }
