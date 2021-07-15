@@ -93,11 +93,6 @@ function App() {
 
   return (
     <div className="App">
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ) : (
-        <h3>Login to upload</h3>
-      )}
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="App__signup">
@@ -132,7 +127,6 @@ function App() {
           </form>
         </div>
       </Modal>
-
       <Modal open={openSignin} onClose={() => setOpenSignin(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="App__signup">
@@ -182,7 +176,6 @@ function App() {
           <Button onClick={() => setOpen(true)}> Sign Up</Button>
         </div>
       )}
-
       {posts.map(({ id, post }) => (
         <Post
           key={id}
@@ -191,6 +184,13 @@ function App() {
           caption={post.caption}
         />
       ))}
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+        <center style={{ padding: "20px" }}>
+          <h3>Login to upload</h3>
+        </center>
+      )}
     </div>
   );
 }
